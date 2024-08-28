@@ -19,7 +19,8 @@ class AdminController extends Controller
         return view('admin.admin_dashboard');
     }
 
-    public function AdminLoginSubmit(Request $request) {
+    public function AdminLoginSubmit(Request $request)
+    {
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
@@ -34,10 +35,20 @@ class AdminController extends Controller
         }else{
             return redirect()->route('admin.login')->with('error','Invalid Creadentials');
         }
+        // $credentials = $request->only('email', 'password');
+
+        // if (Auth::guard('admin')->attempt($credentials)) {
+        //     // Authentication passed
+        //     return redirect()->route('admin.dashboard')->with('success', 'Login successful');
+        // }
+
+        // // Authentication failed
+        // return redirect()->route('admin.login')->with('error', 'Invalid credentials');
     }
 
-    public function AdminLogout(){
+    public function AdminLogout()
+    {
         Auth::guard('admin')->logout();
-        return redirect()->route('admin.login')->with('success','Logout Success');
+        return redirect()->route('admin.login')->with('success', 'Logout Success');
     }
 }
