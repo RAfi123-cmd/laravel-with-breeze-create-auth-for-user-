@@ -30,10 +30,10 @@ class AdminController extends Controller
             'email' => $check['email'],
             'password' => $check['password'],
         ];
-        if (Auth::guard('admin')-> attempt($data)) {
-            return redirect()->route('admin.dashboard')->with('succes','Login Successfully');
-        }else{
-            return redirect()->route('admin.login')->with('error','Invalid Creadentials');
+        if (Auth::guard('admin')->attempt($data)) {
+            return redirect()->route('admin.dashboard')->with('succes', 'Login Successfully');
+        } else {
+            return redirect()->route('admin.login')->with('error', 'Invalid Creadentials');
         }
         // $credentials = $request->only('email', 'password');
 
@@ -51,4 +51,11 @@ class AdminController extends Controller
         Auth::guard('admin')->logout();
         return redirect()->route('admin.login')->with('success', 'Logout Success');
     }
+
+    public function AdminForgetPassword()
+    {
+        return view('admin.forget_password');
+    }
+
+    public function AdminPasswordSubmit(Request $request) {}
 }
