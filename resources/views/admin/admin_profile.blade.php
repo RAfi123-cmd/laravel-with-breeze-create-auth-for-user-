@@ -37,15 +37,15 @@
                                     </div>
                                     <div class="flex-grow-1">
                                         <div>
-                                            <h5 class="font-size-16 mb-1">{{ 
+                                            <h5 class="font-size-16 mb-1">{{
                                                 $profileData->name }}</h5>
-                                            <p class="text-muted font-size-13">{{ 
+                                            <p class="text-muted font-size-13">{{
                                                 $profileData->email }}</p>
 
                                             <div class="d-flex flex-wrap align-items-start gap-2 gap-lg-3 text-muted font-size-13">
-                                                <div><i class="mdi mdi-circle-medium me-1 text-success align-middle"></i>{{ 
+                                                <div><i class="mdi mdi-circle-medium me-1 text-success align-middle"></i>{{
                                                     $profileData->phone }}</div>
-                                                <div><i class="mdi mdi-circle-medium me-1 text-success align-middle"></i>{{ 
+                                                <div><i class="mdi mdi-circle-medium me-1 text-success align-middle"></i>{{
                                                     $profileData->address }}</div>
                                             </div>
                                         </div>
@@ -57,16 +57,54 @@
                     <!-- end card body -->
                 </div>
                 <!-- end card -->
-                <!-- end tab content -->
+                <div class="card-body p-4">
+                    <form action="">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div>
+                                <div class="mb-3">
+                                    <label for="example-text-input" class="form-label">Name</label>
+                                    <input class="form-control" name="name" type="text" value="{{ $profileData->name }}" id="example-text-input">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="example-text-input" class="form-label">Email</label>
+                                    <input class="form-control" name="email" type="email" value="{{ $profileData->email }}" id="example-text-input">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="example-text-input" class="form-label">Phone</label>
+                                    <input class="form-control" name="phone" type="text" value="{{ $profileData->phone }}" id="example-text-input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="mt-3 mt-lg-0">
+                                <div class="mb-3">
+                                    <label for="example-text-input" class="form-label">Address</label>
+                                    <input class="form-control" name="address" type="text" value="{{ $profileData->address }}" id="example-text-input">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="example-text-input" class="form-label">Profile Image</label>
+                                    <input class="form-control" name="photo" type="file" id="image">
+                                </div>
+                                <div class="mb-3">
+
+                                    <img src="{{ (!empty($profileData->photo)) 
+                                            ? url ('upload/admin_images/'.$profileData->photo) 
+                                            : url('upload/no_image.jpg') }}" alt="" class="rounded-circle p-1 bg-primary" width="110">
+                                </div>
+                                <div class="mt-4">
+                                    <button type="submit" class="btn btn-primary
+                                    waves-effect waves-light">Save Changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
             </div>
-            <!-- end col -->
-
-
-            <!-- end col -->
         </div>
-        <!-- end row -->
-
-    </div> <!-- container-fluid -->
+    </div> 
 </div>
 
 @endsection()
