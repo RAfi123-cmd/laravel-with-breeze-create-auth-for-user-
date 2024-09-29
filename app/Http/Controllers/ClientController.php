@@ -6,5 +6,12 @@ use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
-    //
+    public function ClientLogin()
+    {
+        return view('client.client_login');
+    }
+    public function ClientRegister()
+    {
+        return view('client.client_register');
+    }
 }
