@@ -21,6 +21,8 @@
     <!-- App Css-->
     <link href="{{ asset('backend/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+
 </head>
 
 <body>
@@ -55,7 +57,7 @@
                                     @if (Session::has('success'))
                                     <li>{{ Session::get('success') }}</li>
                                     @endif
-                                    <form class="mt-4 pt-2" action="{{ route('admin.login_submit') }}" method="post">
+                                    <form class="mt-4 pt-2" action="{{ route('client.register.submit') }}" method="post">
                                         @csrf
                                         <div class="mb-3">
                                             <label class="form-label">Restaurant Name</label>
@@ -66,7 +68,7 @@
                                             <input type="text" name="phone" class="form-control" id="phone" placeholder="Enter Phone">
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label">Phone</label>
+                                            <label class="form-label">Address</label>
                                             <input type="text" name="address" class="form-control" id="address" placeholder="Enter Address">
                                         </div>
                                         <div class="mb-3">
@@ -93,13 +95,13 @@
                                         <div class="row mb-4">
                                             <div class="col">
                                                 <div class="form-check">
-                                                    
+
                                                 </div>
                                             </div>
 
                                         </div>
                                         <div class="mb-3">
-                                            <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Log In</button>
+                                            <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Register</button>
                                         </div>
                                     </form>
 
@@ -212,7 +214,7 @@
                                                     <div class="mt-4 pt-3 pb-5">
                                                         <div class="d-flex align-items-start">
                                                             <div class="flex-shrink-0">
-                                                            <img src="{{ asset('backend/assets/images/users/avatar-1.jpg') }}" class="avatar-md img-fluid rounded-circle" alt="...">
+                                                                <img src="{{ asset('backend/assets/images/users/avatar-1.jpg') }}" class="avatar-md img-fluid rounded-circle" alt="...">
                                                             </div>
                                                             <div class="flex-grow-1 ms-3 mb-4">
                                                                 <h5 class="font-size-18 text-white">Rosanna French
@@ -236,7 +238,7 @@
                                                         feel.”</h4>
                                                     <div class="mt-4 pt-3 pb-5">
                                                         <div class="d-flex align-items-start">
-                                                        <img src="{{ asset('backend/assets/images/users/avatar-1.jpg') }}" class="avatar-md img-fluid rounded-circle" alt="...">
+                                                            <img src="{{ asset('backend/assets/images/users/avatar-1.jpg') }}" class="avatar-md img-fluid rounded-circle" alt="...">
                                                             <div class="flex-1 ms-3 mb-4">
                                                                 <h5 class="font-size-18 text-white">Ilse R. Eaton</h5>
                                                                 <p class="mb-0 text-white-50">Manager
@@ -274,6 +276,31 @@
     <script src="{{ asset('backend/assets/libs/pace-js/pace.min.js') }}"></script>
     <!-- password addon init -->
     <script src="{{ asset('backend/assets/js/pages/pass-addon.init.js') }}"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script>
+        @if(Session::has('message'))
+        var type = "{{ Session::get('alert-type','info') }}"
+        switch (type) {
+            case 'info':
+                toastr.info(" {{ Session::get('message') }} ");
+                break;
+
+            case 'success':
+                toastr.success(" {{ Session::get('message') }} ");
+                break;
+
+            case 'warning':
+                toastr.warning(" {{ Session::get('message') }} ");
+                break;
+
+            case 'error':
+                toastr.error(" {{ Session::get('message') }} ");
+                break;
+        }
+        @endif
+    </script>
 
 </body>
 
