@@ -60,6 +60,6 @@ class ClientController extends Controller
     }
 
     public function ClientDashboard(){
-        return view('client.client_dashboard');
+        return view('client.index');
     }
 }
