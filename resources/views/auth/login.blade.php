@@ -47,7 +47,7 @@
                         <form method="POST" action="{{ route('login') }}">
                            @csrf
                            <div class="form-label-group">
-                              <input type="email" id="inputEmail" class="form-control" placeholder="Email address">
+                              <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address">
                               <label for="inputEmail">Email</label>
                            </div>
                            <div class="form-label-group">
