@@ -47,4 +47,9 @@ class UserController extends Controller
             unlink($fullPath);
         }
     }
+
+    public function UserLogout(){
+        Auth::guard('web')->logout();
+        return redirect()->route('login')->with('success','logout Successfully');
+    }
 }
