@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -59,3 +60,12 @@ Route::post('/client/register/submit', [ClientController::class, 'ClientRegister
 Route::post('/client/login_submit', [ClientController::class, 'ClientLoginSubmit'])->name('client.login_submit');
 Route::get('/client/logout', [ClientController::class, 'ClientLogout'])->name('client.logout');
 
+// all admin category
+
+Route::middleware('admin')->group(function () {
+    Route::controller(CategoryController::class)->group(function (){
+        Route::get('/all/category', 'AllCategory')->name('all.category');
+    }); 
+    // end admin middleware
+    
+}); 
