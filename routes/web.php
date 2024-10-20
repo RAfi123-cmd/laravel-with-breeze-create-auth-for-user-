@@ -65,6 +65,7 @@ Route::get('/client/logout', [ClientController::class, 'ClientLogout'])->name('c
 Route::middleware('admin')->group(function () {
     Route::controller(CategoryController::class)->group(function (){
         Route::get('/all/category', 'AllCategory')->name('all.category');
+        Route::get('/add/category', 'AddCategory')->name('add.category');
     }); 
     // end admin middleware
     
