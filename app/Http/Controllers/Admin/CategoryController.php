@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
+use App\Models\City;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 use Illuminate\Http\Request;
@@ -100,5 +101,11 @@ class CategoryController extends Controller
         );
 
         return redirect()->back()->with($notification); 
+    }
+
+    // ALL City Method in here
+    public function  AllCity(){
+        $city = City::latest()->get();
+        return view('admin.backend.city.all_city', compact('city'));
     }
 }
