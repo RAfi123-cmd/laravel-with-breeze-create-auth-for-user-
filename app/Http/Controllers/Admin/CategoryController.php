@@ -108,4 +108,23 @@ class CategoryController extends Controller
         $city = City::latest()->get();
         return view('admin.backend.city.all_city', compact('city'));
     }
+
+    public function StoreCity(Request $request){
+            City::create([
+                'city_name' => $request->city_name,
+                'city_slug' => strtolower(str_replace(' ','-',$request->city_name)) 
+            ]); 
+
+        $notification = array(
+            'message' => 'City Inserted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
+
+    public function EditCity($id){
+        $city = City::find($id);
+        return response()->json($city);
+    }
 }
