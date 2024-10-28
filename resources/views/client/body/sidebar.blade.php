@@ -23,13 +23,13 @@
                     <ul class="sub-menu" aria-expanded="false">
                         <li>
                             <a href="{{ route('all.menu') }}">
-                                <span data-key="t-calendar">Add Menu</span>
+                                <span data-key="t-calendar">All Menu</span>
                             </a>
                         </li>
 
                         <li>
-                            <a href="apps-chat.html">
-                                <span data-key="t-chat">All Menu</span>
+                            <a href="{{ route('add.menu') }}">
+                                <span data-key="t-chat">Add Menu</span>
                             </a>
                         </li>
                     </ul>
