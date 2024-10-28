@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Client\RestaurantController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -81,4 +82,15 @@ Route::middleware('admin')->group(function () {
     }); 
     // end admin middleware
     
-}); 
+});
+
+Route::middleware('client')->group(function () {
+    Route::controller(RestaurantController::class)->group(function (){
+        Route::get('/all/menu', 'AllMenu')->name('all.menu');
+        Route::get('/add/category', 'AddCategory')->name('add.category');
+        Route::post('/store/city', 'StoreCity')->name('city.store');
+        Route::get('/edit/city/{id}', 'EditCity');
+        Route::post('/update/city', 'UpdateCity')->name('city.update');
+        Route::get('/delete/city/{id}', 'DeleteCity')->name('delete.city');
+    });
+});
