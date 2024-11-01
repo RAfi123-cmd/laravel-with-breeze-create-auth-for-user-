@@ -122,6 +122,10 @@ class RestaurantController extends Controller
         $menu = Menu::latest()->get();
         return view('client.backend.product.add_product', compact('category', 'city', 'menu'));
     }
-    // End Method 
+    // End Method
+    
+    public function StoreProduct(){
 
+    }
+    // End Method
 }
