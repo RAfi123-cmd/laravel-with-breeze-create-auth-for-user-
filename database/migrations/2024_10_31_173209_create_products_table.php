@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('code')->nullable();
             $table->string('qty')->nullable();
             $table->string('size')->nullable();
-            $table->string('prize')->nullable();
-            $table->string('discount_prize')->nullable();
+            $table->string('price')->nullable();
+            $table->string('discount_price')->nullable();
             $table->string('image')->nullable();
             $table->string('client_id')->nullable();
             $table->string('most_populer')->nullable();

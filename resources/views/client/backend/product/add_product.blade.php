@@ -19,7 +19,7 @@
         </div>
         <!-- end page title -->
         <div class="row">
-            <div class="col-xl-9 col-lg-8">
+            <div class="col-xl-12 col-lg-12">
                 <div class="card">
                     <div class="card-body p-4">
                         <form id="myForm" action="{{ route('product.store') }}" method="post" enctype="multipart/form-data">
