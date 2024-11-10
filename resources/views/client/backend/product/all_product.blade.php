@@ -54,7 +54,7 @@
                             $amount = $item->price - $item->discount_price;
                             $discount = ($amount / $item->price) * 100;
                         @endphp
-                        <span class="badge bg-danger">{{ round($discount) }}</span>
+                        <span class="badge bg-danger">{{ round($discount) }}%</span>
                     @endif
                     </td>
                 <td> 

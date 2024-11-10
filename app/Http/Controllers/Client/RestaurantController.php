@@ -11,6 +11,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 use App\Models\Menu;
 use App\Models\Product;
 use App\Models\City;
+use App\Models\Gllery;
 use Carbon\Carbon;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 
@@ -250,4 +251,12 @@ class RestaurantController extends Controller
         $product->save();
         return response()->json(['success' => 'Status Change Successfully' ]);
     }
+
+    // All Gallery Method
+    public function AllGallery()
+    {
+        $gallery = Gllery::latest()->get();
+        return view('client.backend.gallery.all_gallery', compact('gallery'));
+    }
+    // End Method
 }
