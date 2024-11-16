@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Client;
+use App\Models\City;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -68,9 +69,10 @@ class ClientController extends Controller
         return redirect()->route('client.login')->with('success', 'Logout Success');
     }
     public function ClientProfile(){
+        $city = City::latest()->get();
         $id = Auth::guard('client')->id();
         $profileData =  Client::find($id);
-        return view('client.client_profile', compact('profileData'));
+        return view('client.client_profile', compact('profileData', 'city'));
     }
 
     public function ClientProfileStore(Request $request){
