@@ -23,7 +23,7 @@
                            <div class="p-3 position-relative">
                               <div class="list-card-body">
                                  <h6 class="mb-1"><a href="detail.html" class="text-black">World Famous</a></h6>
-                                 <p class="text-gray mb-3">North Indian • American • Pure veg</p>
+                                 <p class="text-gray mb-3">North Indonesia • American • Pure veg</p>
                                  <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="icofont-wall-clock"></i> 20–25 min</span> <span class="float-right text-black-50"> $250 FOR TWO</span></p>
                               </div>
                               <div class="list-card-badge">
@@ -49,7 +49,7 @@
                            <div class="p-3 position-relative">
                               <div class="list-card-body">
                                  <h6 class="mb-1"><a href="detail.html" class="text-black">World Famous</a></h6>
-                                 <p class="text-gray mb-3">North Indian • American • Pure veg</p>
+                                 <p class="text-gray mb-3">North Indonesia • American • Pure veg</p>
                                  <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="icofont-wall-clock"></i> 20–25 min</span> <span class="float-right text-black-50"> $250 FOR TWO</span></p>
                               </div>
                               <div class="list-card-badge">
@@ -75,7 +75,7 @@
                            <div class="p-3 position-relative">
                               <div class="list-card-body">
                                  <h6 class="mb-1"><a href="detail.html" class="text-black">World Famous</a></h6>
-                                 <p class="text-gray mb-3">North Indian • American • Pure veg</p>
+                                 <p class="text-gray mb-3">North Indonesia • American • Pure veg</p>
                                  <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="icofont-wall-clock"></i> 20–25 min</span> <span class="float-right text-black-50"> $250 FOR TWO</span></p>
                               </div>
                               <div class="list-card-badge">
@@ -101,7 +101,7 @@
                            <div class="p-3 position-relative">
                               <div class="list-card-body">
                                  <h6 class="mb-1"><a href="detail.html" class="text-black">World Famous</a></h6>
-                                 <p class="text-gray mb-3">North Indian • American • Pure veg</p>
+                                 <p class="text-gray mb-3">North Indonesia • American • Pure veg</p>
                                  <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="icofont-wall-clock"></i> 20–25 min</span> <span class="float-right text-black-50"> $250 FOR TWO</span></p>
                               </div>
                               <div class="list-card-badge">
@@ -127,7 +127,7 @@
                            <div class="p-3 position-relative">
                               <div class="list-card-body">
                                  <h6 class="mb-1"><a href="detail.html" class="text-black">World Famous</a></h6>
-                                 <p class="text-gray mb-3">North Indian • American • Pure veg</p>
+                                 <p class="text-gray mb-3">North Indonesia • American • Pure veg</p>
                                  <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="icofont-wall-clock"></i> 20–25 min</span> <span class="float-right text-black-50"> $250 FOR TWO</span></p>
                               </div>
                               <div class="list-card-badge">
@@ -153,7 +153,7 @@
                            <div class="p-3 position-relative">
                               <div class="list-card-body">
                                  <h6 class="mb-1"><a href="detail.html" class="text-black">World Famous</a></h6>
-                                 <p class="text-gray mb-3">North Indian • American • Pure veg</p>
+                                 <p class="text-gray mb-3">North Indonesia • American • Pure veg</p>
                                  <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="icofont-wall-clock"></i> 20–25 min</span> <span class="float-right text-black-50"> $250 FOR TWO</span></p>
                               </div>
                               <div class="list-card-badge">
