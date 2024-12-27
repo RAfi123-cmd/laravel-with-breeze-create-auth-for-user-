@@ -153,4 +153,13 @@ class ManageController extends Controller
         return redirect()->back()->with($notification);
     }
     // End Method
+
+    // For All Pending and approve Restaurant method
+
+    public function PendingRestaurant(){
+        $client = Client::where('status',0)->get();
+        return view('admin.backend.restaurant.pending_restaurant',compact('client'));
+    }
+
+    // End Method
 }

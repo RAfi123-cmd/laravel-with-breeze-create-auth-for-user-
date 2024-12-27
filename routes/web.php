@@ -91,6 +91,10 @@ Route::middleware('admin')->group(function () {
         Route::post('/admin/update/product', 'AdminUpdateProduct')->name('admin.product.update');
         Route::get('/admin/delete/product/{id}', 'AdminDeleteProduct')->name('admin.delete.product');
     });
+
+    Route::controller(ManageController::class)->group(function (){
+        Route::get('/pending/restaurant', 'PendingRestaurant')->name('pending.restaurant');
+    });
     // end admin middleware
     
 });
