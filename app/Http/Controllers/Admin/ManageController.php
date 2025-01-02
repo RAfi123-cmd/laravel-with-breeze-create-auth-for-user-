@@ -12,6 +12,7 @@ use App\Models\Menu;
 use App\Models\Product;
 use App\Models\City;
 use App\Models\Client;
+use App\Models\Banner;
 use App\Models\Gllery;
 use Carbon\Carbon;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
@@ -173,5 +174,11 @@ class ManageController extends Controller
         $client->status = $request->status;
         $client->save();
         return response()->json(['success' => 'Status Change Successfully' ]);
+    }
+
+    // All Banner Method in Here
+    public function AllBanner(){
+        $banner = Banner::latest()->get();
+        return view('admin.backend.banner.all_banner', compact('banner'));
     }
 }
