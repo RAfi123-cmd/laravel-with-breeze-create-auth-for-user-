@@ -99,6 +99,7 @@ Route::middleware('admin')->group(function () {
     });
     Route::controller(ManageController::class)->group(function (){
         Route::get('/all/banner', 'AllBanner')->name('all.banner');
+        Route::post('/banner/store', 'BannerStore')->name('banner.store');
     });
     // end admin middleware
     
