@@ -7,7 +7,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <meta name="description" content="Askbootstrap">
    <meta name="author" content="Askbootstrap">
-   <title>User Dashboard - Online Food Ordering</title>
+   <title>User Dashboard - Online Food Ordering Website</title>
    <!-- Favicon Icon -->
    <link rel="icon" type="image/png" href="{{ asset('frontend/img/favicon.png') }}">
    <!-- Bootstrap core CSS-->
@@ -20,13 +20,18 @@
    <link href="{{ asset('frontend/vendor/select2/css/select2.min.css') }}" rel="stylesheet">
    <!-- Custom styles for this template-->
    <link href="{{ asset('frontend/css/osahan.css') }}" rel="stylesheet">
+
+   <link rel="stylesheet" href="{{ asset('frontend/vendor/owl-carousel/owl.carousel.css') }}">
+   <link rel="stylesheet" href="{{ asset('frontend/vendor/owl-carousel/owl.theme.css') }}">
+
+
 </head>
 
 <body>
 
    <nav class="navbar navbar-expand-lg navbar-light bg-light osahan-nav shadow-sm">
       <div class="container">
-         <a class="navbar-brand" href="{{ route('index') }}"><img alt="logo" src="{{ asset('frontend/img/logo.png')}}"></a>
+         <a class="navbar-brand" href="{{ route('index') }}"><img alt="logo" src="{{ asset('frontend/img/logo.png') }}"></a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
          </button>
@@ -42,20 +47,21 @@
                   <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      Restaurants
                   </a>
+
                </li>
                @php
                $id = Auth::user()->id;
                $profileData = App\Models\User::find($id);
                @endphp
+
                <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     <img alt="Generic placeholder image" src="{{ (!empty($profileData->photo)) 
-                                            ? url ('upload/user_images/'.$profileData->photo) 
-                                            : url('upload/no_image.jpg') }}" class="nav-osahan-pic rounded-pill"> My Account
+                     <img alt="Generic placeholder image" src="{{ (!empty($profileData->photo)) ? url('upload/user_images/'.$profileData->photo) : url('upload/no_image.jpg') }}" class="nav-osahan-pic rounded-pill"> My Account
                   </a>
                   <div class="dropdown-menu dropdown-menu-right shadow-sm border-0">
                      <a class="dropdown-item" href="{{ route('dashboard') }}"><i class="icofont-food-cart"></i> Dashboard</a>
-                     <a class="dropdown-item" href="{{ route('user.logout') }}"><i class="icofont-sale-discount"></i> Logout</a>
+                     <a class="dropdown-item" href="{{ route('user.logout') }}"><i class="icofont-sale-discount"></i> Logout </a>
+
                   </div>
                </li>
                <li class="nav-item dropdown dropdown-cart">
