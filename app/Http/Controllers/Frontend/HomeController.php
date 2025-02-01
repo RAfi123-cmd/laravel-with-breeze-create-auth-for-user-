@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Client;
 use App\Models\Menu;
 use App\Models\Gllery;
+use App\Models\Wishlist;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,4 +23,39 @@ class HomeController extends Controller
         
     }
     // End Method
+
+    public function AddWishList(Request $request, $id){
+        if (Auth::check()) {
+            $exists = Wishlist::where('user_id',Auth::id())->where('client_id',$id)->first();
+            if (!$exists ) {
+                Wishlist::insert([
+                    'user_id'=> Auth::id(),
+                    'client_id' => $id,
+                    'created_at' => Carbon::now(),
+                ]);
+                return response()->json(['success' => 'Your Wishlist Addedd Successfully']);
+            } else {
+                return response()->json(['error' => 'This product has already on your wishlist']);
+            } 
+        }else{
+            return response()->json(['error' => 'First Login Your Account']);
+        }
+    }
+    //End Method
+
+    public function AllWishlist(){
+        $wishlist = Wishlist::where('user_id', Auth::id())->get();
+        return view('frontend.dashboard.all_wishlist', compact('wishlist'));
+    }
+    // End Method
+
+    public function RemoveWishlist($id){
+        Wishlist::find($id)->delete();
+
+        $notification = array(
+            'message' => 'Wishlist Deleted Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
+    }
 }
