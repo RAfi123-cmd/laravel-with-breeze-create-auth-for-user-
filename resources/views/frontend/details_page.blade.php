@@ -167,7 +167,6 @@ $coupons = App\Models\Coupon::where('client_id',$client->id)->where('status','1'
                                                     @else
                                                     <p class="text-gray mb-0"> ({{ $product->size }} cm)</p>
                                                     @endif
-                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -191,13 +190,11 @@ $coupons = App\Models\Coupon::where('client_id',$client->id)->where('status','1'
                                             <div class="position-absolute restaurant-slider-pics bg-dark text-white">{{ $index + 1 }} of {{ $gallery->count() }} Photos</div>
                                         </div>
                                         @endforeach
-                                        
-                                    </div>
-                                    
-                                    
+                                    </div>   
                                 </div>
                             </div>
                         </div>
+
                         <div class="tab-pane fade" id="pills-restaurant-info" role="tabpanel" aria-labelledby="pills-restaurant-info-tab">
                             <div id="restaurant-info" class="bg-white rounded shadow-sm p-4 mb-4">
                                 <div class="address-map float-right ml-5">
@@ -206,12 +203,11 @@ $coupons = App\Models\Coupon::where('client_id',$client->id)->where('status','1'
                                     </div>
                                 </div>
                                 <h5 class="mb-4">Restaurant Info</h5>
-                                <p class="mb-3">Jagjit Nagar, Near Railway Crossing,
-                                    <br> Near Model Town, Ludhiana, PUNJAB
+                                <p class="mb-3"> {{ $client->address }}
                                 </p>
-                                <p class="mb-2 text-black"><i class="icofont-phone-circle text-primary mr-2"></i> +91 01234-56789, +91 01234-56789</p>
-                                <p class="mb-2 text-black"><i class="icofont-email text-primary mr-2"></i> iamosahan@gmail.com, osahaneat@gmail.com</p>
-                                <p class="mb-2 text-black"><i class="icofont-clock-time text-primary mr-2"></i> Today 11am – 5pm, 6pm – 11pm
+                                <p class="mb-2 text-black"><i class="icofont-phone-circle text-primary mr-2"></i>{{ $client->phone }}</p>
+                                <p class="mb-2 text-black"><i class="icofont-email text-primary mr-2"></i>{{ $client->email }}</p>
+                                <p class="mb-2 text-black"><i class="icofont-clock-time text-primary mr-2"></i> {{ $client->shop_info }}
                                     <span class="badge badge-success"> OPEN NOW </span>
                                 </p>
                                 <hr class="clearfix">
