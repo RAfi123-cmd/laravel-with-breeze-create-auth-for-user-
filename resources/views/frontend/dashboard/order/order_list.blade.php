@@ -55,7 +55,7 @@ $profileData = App\Models\User::find($id);
 
                                                 <td class="d-flex justify-content-between">
                                                     <a href="{{ route('user.order.details',$item->id) }}" class="btn-small d-block text-primary"><i class="fas fa-eye"></i> View</a>
-                                                    <a href="{{ route('admin.order.details',$item->id) }}" class="btn-small d-block text-danger"><i class="fas fa-download"></i> Invoice</a>
+                                                    <a href="{{ route('user.invoice.download',$item->id) }}" class="btn-small d-block text-danger"><i class="fas fa-download"></i> Invoice</a>
                                                 </td>
                                             </tr>
                                             @endforeach

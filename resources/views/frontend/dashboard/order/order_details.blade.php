@@ -16,11 +16,7 @@ $profileData = App\Models\User::find($id);
                         <div class="tab-pane fade show active" id="orders" role="tabpanel" aria-labelledby="orders-tab">
                             <h4 class="font-weight-bold mt-0 mb-4">Order Details</h4>
 
-
-
-
                             <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2">
-
                                 <div class="col">
                                     <div class="card">
                                         <div class="card-header">
