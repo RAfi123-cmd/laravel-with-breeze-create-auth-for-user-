@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ManageController;
 use App\Http\Controllers\Admin\ManageOrderController;
+use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Client\RestaurantController;
 use App\Http\Controllers\Client\CouponController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -132,6 +133,13 @@ Route::middleware('admin')->group(function () {
         Route::get('/pening_to_confirm/{id}', 'PendingToConfirm')->name('pening_to_confirm');
         Route::get('/confirm_to_processing/{id}', 'ConfirmToProcessing')->name('confirm_to_processing'); 
         Route::get('/processing_to_deliverd/{id}', 'ProcessingToDiliverd')->name('processing_to_deliverd'); 
+    });
+    Route::controller(ReportController::class)->group(function(){
+        Route::get('/admin/all/reports', 'AdminAllReports')->name('admin.all.reports');
+        Route::post('/admin/search/bydate', 'AdminSearchByDate')->name('admin.search.bydate');
+        Route::post('/admin/search/bymonth', 'AdminSearchByMonth')->name('admin.search.bymonth');
+        Route::post('/admin/search/byyear', 'AdminSearchByYear')->name('admin.search.byyear');
+         
     });
     // end admin middleware
     
